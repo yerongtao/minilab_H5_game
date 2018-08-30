@@ -1,0 +1,77 @@
+@media screen and (orientation: portrait) {
+  /*竖屏样式*/
+  .loading {
+    transform-origin: 0 0;
+    transform: rotateZ(90deg) translateY(-100%);
+  }
+}
+
+.loading {
+  background: url('../resource/assets/loading_bg.png') no-repeat center;
+  background-size: cover;
+  display: table;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: #000000
+}
+
+.loading .progress {
+  position: relative;
+  top: 35px;
+  color: #eef1b8;
+  text-shadow: 0 0 2px #ccc, 0 0 5px #f6a422, 0 0 15px #f6a422, 0 0 30px #f6a422;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.loading .loading-img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  height: 40px;
+}
+
+.loading .loading-img .life1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.loading .loading-img .life2 {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 0%;
+  height: 80%;
+}
+
+.rotate {
+  display: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: url('../resource/assets/rotate.jpg') no-repeat center;
+  background-size: cover;
+  background-color: #000000
+}
+
+@media screen and (orientation: landscape) {
+  /* 横屏 */
+  .rotate {
+    transform-origin: 0 0;
+    transform: rotateZ(-90deg) translateX(-100%);
+    display: block
+  }
+}

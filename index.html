@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="full-screen" content="true" />
+  <meta name="screen-orientation" content="portrait" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="360-fullscreen" content="true" />
+  <title>minilab</title>
+  <!-- loading 动画 -->
+  <script src="./static/jquery-3.2.1.min.js"></script>
+  <!-- <link rel="stylesheet" href="./static/loading/loading.css"> -->
+
+</head>
+
+<body>
+  <!-- loading 动画 -->
+  <!-- <div class="loading" id="loading">
+    <div class="loading-img">
+      <img src="./static/loading/loading_life_1.png" alt="" class="life1">
+      <img src="./static/loading/loading_life_2.png" alt="" class="life2" id="life2">
+    </div>
+    <div class="progress" id="progress">LOADING 0 %</div>
+  </div> -->
+  <!-- <script>
+    var LoadingCount = 0;
+    // resize 监听 loading 设置强制横屏
+    (function () {
+      function resize() {
+        var Width = $(window).width();
+        var Height = $(window).height();
+        var L = $("#loading");
+        var max = Width > Height ? Width : Height;
+        var min = Width > Height ? Height : Width;
+        L.width(max);
+        L.height(min);
+      }
+      resize();
+      window.addEventListener("resize", resize);
+      // 加载进度条
+      function change() {
+        var DomLoading = document.getElementById("loading"),
+          DomProgress = document.getElementById("progress"),
+          DomLoadingLife2 = document.getElementById("life2");
+        // console.log("这里看一下 LoadingWidth = " + LoadingWidth + " LoadingCount = " + LoadingCount);
+        var clearInt = setInterval(function () {
+          LoadingCount += 5;
+          var LoadingWidth = Math.floor(LoadingCount / 22 * 100);
+          DomProgress.innerHTML = "LOADING " + LoadingWidth + " %";
+          DomLoadingLife2.style.width = LoadingWidth + "%";
+          if (LoadingWidth >= 95) {
+            DomLoadingLife2.style.width = "95%";
+          }
+          if (LoadingWidth >= 100) {
+            DomProgress.innerHTML = "LOADING 100 %";
+          }
+          if (LoadingCount >= 100) {
+            DomLoading.style.display = "none"
+            clearInterval(clearInt);
+          }
+        }, 20)
+      }
+      change()
+    })();
+
+  </script> -->
+  <div id="app"></div>
+
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.inc.min.js"></script>
+  <script>
+    // 支付宝分享
+    function ready(callback) {
+      // 如果jsbridge已经注入则直接调用
+      if (window.AlipayJSBridge) {
+        callback && callback()
+      } else {
+        // 如果没有注入则监听注入的事件
+        document.addEventListener('AlipayJSBridgeReady', callback, false)
+      }
+    }
+    ready(function () {
+      AlipayJSBridge.call('setOptionMenu', {
+        icontype: 'more',
+        redDot: '-1' // -1表示不显示，0表示显示红点，1-99表示在红点上显示的数字
+      })
+      document.addEventListener('optionMenu', function (e) {
+        ap.share({
+          title: share.title,
+          content: share.desc,
+          url: share.link,
+          image: share.imgUrl,
+          // 是否显示分享面板第二行的工具按钮，默认 true
+          showToolBar: false
+        }, function (result) {})
+      }, false)
+    })
+
+  </script>
+</body>
+
+</html>

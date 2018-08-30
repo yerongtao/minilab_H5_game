@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="FirstScene" previous="" next="" version="2.2">
+  <item type="instance" UID="5972"/>
+  <item type="instance" UID="5220"/>
+  <item type="instance" UID="5243"/>
+  <item type="instance" UID="5211"/>
+  <item type="instance" UID="5202"/>
+  <item type="instance" UID="5205"/>
+  <item type="instance" UID="5208"/>
+  <item type="instance" UID="5199"/>
+  <item type="instance" UID="5196"/>
+  <item type="variable" variableName="sound" variableType="number" initValue="1"/>
+  <item type="variable" variableName="prize" variableType="string" initValue=""/>
+  <item type="variable" variableName="Hi" variableType="number" initValue="0"/>
+  <item type="variable" variableName="Wi" variableType="number" initValue="0"/>
+  <item type="variable" variableName="defen" variableType="number" initValue="0"/>
+  <item type="variable" variableName="time" variableType="number" initValue="20"/>
+  <item type="variable" variableName="s" variableType="number" initValue="360"/>
+  <item type="variable" variableName="temp" variableType="number" initValue="0"/>
+  <item type="variable" variableName="W" variableType="number" initValue="0"/>
+  <item type="variable" variableName="H" variableType="number" initValue="0"/>
+  <item type="variable" variableName="music" variableType="number" initValue="1"/>
+  <item type="variable" variableName="token" variableType="number" initValue="0"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="execJs" target="Browser">
+      <item valueDataType="string" value="System.H%3Dwindow.innerHeight" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="execJs" target="Browser">
+      <item valueDataType="string" value="System.W%3Dwindow.innerWidth" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="on">
+      <item valueDataType="number" value="828*System.H%2FSystem.W-80" name="16"/>
+      <item valueDataType="number" value="80" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="off">
+      <item valueDataType="number" value="828*System.H%2FSystem.W-80" name="16"/>
+      <item valueDataType="number" value="80" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setX" target="title">
+      <item valueDataType="number" value="600%2B(828*System.H%2FSystem.W-650)%2F2" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setX" target="start">
+      <item valueDataType="number" value="600%2B(828*System.H%2FSystem.W-650)%2F2" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setX" target="rules">
+      <item valueDataType="number" value="600%2B(828*System.H%2FSystem.W-650)%2F2-125" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setX" target="prize">
+      <item valueDataType="number" value="600%2B(828*System.H%2FSystem.W-650)%2F2%2B125" name="16"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="Wi" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="System.H" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="execJs" target="Browser">
+      <item valueDataType="string" value="System.W%3Dwindow.innerHeight" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="execJs" target="Browser">
+      <item valueDataType="string" value="System.H%3Dwindow.innerWidth" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="on">
+      <item valueDataType="number" value="828*System.H%2FSystem.W-80" name="16"/>
+      <item valueDataType="number" value="80" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="off">
+      <item valueDataType="number" value="828*System.H%2FSystem.W-80" name="16"/>
+      <item valueDataType="number" value="80" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setX" target="title">
+      <item valueDataType="number" value="600%2B(828*System.H%2FSystem.W-650)%2F2" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setX" target="start">
+      <item valueDataType="number" value="600%2B(828*System.H%2FSystem.W-650)%2F2" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setX" target="rules">
+      <item valueDataType="number" value="600%2B(828*System.H%2FSystem.W-650)%2F2-125" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setX" target="prize">
+      <item valueDataType="number" value="600%2B(828*System.H%2FSystem.W-650)%2F2%2B125" name="16"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="on"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="on">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="stop" target="背景音乐"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="sound" name="10" variable="true"/>
+      <item valueDataType="any" value="0" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="off"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="on">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="play" target="背景音乐">
+      <item valueDataType="number" value="0" name="2"/>
+      <item valueDataType="number" value="1" name="3"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="sound" name="10" variable="true"/>
+      <item valueDataType="any" value="1" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="start"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22MainScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="rules"/>
+    <item type="action" persistent="false" callTarget="instance" callName="execJs" target="Browser">
+      <item valueDataType="string" value="%22rulesClick()%22" name="2"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="prize"/>
+    <item type="action" persistent="false" callTarget="instance" callName="execJs" target="Browser">
+      <item valueDataType="string" value="%22prizeClick()%22" name="2"/>
+    </item>
+  </item>
+</eventSheets>

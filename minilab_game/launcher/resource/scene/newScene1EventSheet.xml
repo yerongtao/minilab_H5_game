@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="newScene1" previous="" next="" version="2.2">
+  <item type="instance" UID="5981"/>
+  <item type="instance" UID="5466"/>
+  <item type="instance" UID="5371"/>
+  <item type="instance" UID="5368"/>
+  <item type="instance" UID="5365"/>
+  <item type="instance" UID="5362"/>
+  <item type="instance" UID="5359"/>
+  <item type="instance" UID="5356"/>
+  <item type="instance" UID="5460"/>
+  <item type="variable" variableName="sound" variableType="number" initValue="1"/>
+  <item type="variable" variableName="prize" variableType="string" initValue=""/>
+  <item type="variable" variableName="Hi" variableType="number" initValue="0"/>
+  <item type="variable" variableName="Wi" variableType="number" initValue="0"/>
+  <item type="variable" variableName="defen" variableType="number" initValue="0"/>
+  <item type="variable" variableName="time" variableType="number" initValue="20"/>
+  <item type="variable" variableName="s" variableType="number" initValue="360"/>
+  <item type="variable" variableName="temp" variableType="number" initValue="0"/>
+  <item type="variable" variableName="W" variableType="number" initValue="0"/>
+  <item type="variable" variableName="H" variableType="number" initValue="0"/>
+  <item type="variable" variableName="music" variableType="number" initValue="1"/>
+  <item type="variable" variableName="token" variableType="number" initValue="0"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapText" target="defen">
+      <item valueDataType="string" value="System.defen" name="2"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="defen" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="1000" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="win" name="23" isFamily="false"/>
+      <item valueDataType="number" value="1" name="22"/>
+      <item valueDataType="number" value="785" name="21"/>
+      <item valueDataType="number" value="410" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="winbtn" name="23" isFamily="false"/>
+      <item valueDataType="number" value="1" name="22"/>
+      <item valueDataType="number" value="940" name="21"/>
+      <item valueDataType="number" value="550" name="20"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="defen" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="1000" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="fail" name="23" isFamily="false"/>
+      <item valueDataType="number" value="1" name="22"/>
+      <item valueDataType="number" value="785" name="21"/>
+      <item valueDataType="number" value="410" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="failbtn" name="23" isFamily="false"/>
+      <item valueDataType="number" value="1" name="22"/>
+      <item valueDataType="number" value="940" name="21"/>
+      <item valueDataType="number" value="550" name="20"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="failbtn"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22MainScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="winbtn"/>
+    <item type="action" persistent="false" callTarget="instance" callName="execJs" target="Browser">
+      <item valueDataType="string" value="%22luckClick()%22" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="stop" target="sound"/>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="music" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="stop" target="sound"/>
+  </item>
+</eventSheets>

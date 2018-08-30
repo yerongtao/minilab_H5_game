@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="newScene2" previous="" next="" version="2.2">
+  <item type="instance" UID="6089"/>
+  <item type="variable" variableName="sound" variableType="number" initValue="1"/>
+  <item type="variable" variableName="prize" variableType="string" initValue=""/>
+  <item type="variable" variableName="Hi" variableType="number" initValue="0"/>
+  <item type="variable" variableName="Wi" variableType="number" initValue="0"/>
+  <item type="variable" variableName="defen" variableType="number" initValue="0"/>
+  <item type="variable" variableName="time" variableType="number" initValue="20"/>
+  <item type="variable" variableName="s" variableType="number" initValue="360"/>
+  <item type="variable" variableName="temp" variableType="number" initValue="0"/>
+  <item type="variable" variableName="W" variableType="number" initValue="0"/>
+  <item type="variable" variableName="H" variableType="number" initValue="0"/>
+  <item type="variable" variableName="music" variableType="number" initValue="1"/>
+  <item type="variable" variableName="token" variableType="number" initValue="0"/>
+</eventSheets>

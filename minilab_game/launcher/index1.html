@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>minilab1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        * {
+            padding: 0;
+            border: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            -ms-touch-action: none;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+
+        }
+
+        li {
+            list-style: none;
+        }
+
+        @media screen and (orientation:portrait) {
+            /*竖屏样式*/
+            #other {
+                transform-origin: 0 0;
+                transform: rotateZ(90deg) translateY(-100%);
+            }
+            #prize {
+                transform-origin: 0 0;
+                transform: rotateZ(90deg) translateY(-100%);
+            }
+        }
+
+        .other {
+            display: none;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6)
+        }
+
+        .other .rules {
+            margin: auto;
+            position: relative;
+            width: 80%;
+            height: 100%;
+            overflow: scroll;
+        }
+
+        .other .rules .rules-image {
+            width: 100%;
+        }
+
+        .other .rules .rules-dowm {
+            color: #ff0000;
+            bottom: 30px;
+            position: fixed;
+            left: 345px;
+        }
+
+        .other .rules .rules-back {
+            color: #ff0000;
+            position: relative;
+            top: -50px;
+            left: 240px;
+            width: 110px;
+            height: 35px;
+            text-align: center;
+        }
+
+        .prize {
+            /* display: none; */
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #eef1b8;
+            text-align: center;
+        }
+
+        .prize .title {
+            background: url('jp_我的奖品.png') no-repeat center;
+            background-size: contain;
+            width: 200px;
+            height: 40px;
+            margin: auto;
+            margin-top: 25px;
+        }
+
+        .prize .back {
+            background: url('jp_关闭.png') no-repeat center;
+            background-size: contain;
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            width: 40px;
+            height: 40px;
+            /* margin: auto; */
+            /* margin-top: 50px; */
+        }
+
+        .prize .prize-main {
+            margin: auto;
+            position: relative;
+            width: 80%;
+            /* height: 100%; */
+            overflow: scroll;
+            display: flex;
+            padding: 0;
+        }
+
+        .prize .prize-main li {
+            flex: 1;
+            /* background: url('jp_框.png') no-repeat center;
+            background-size: contain; */
+            margin: 0 8px;
+            /* margin-top: -70px; */
+        }
+
+        .prize .prize-main li .main {
+            background: url('jp_框.png') no-repeat center;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .prize .prize-main li .main-img {
+            background: url('jp_魔力雪肌气垫霜.png') no-repeat center;
+            background-size: contain;
+            width: 80%;
+            height: 35%;
+            margin: auto;
+            top: 70px;
+            position: relative;
+        }
+
+        .prize .prize-main li .button {
+            background: url('jp_马上领取.png') no-repeat center;
+            background-size: contain;
+            width: 63%;
+            height: 15%;
+            margin: auto;
+            top: 30px;
+            position: relative;
+        }
+
+        .prize .prize-main li p {
+            position: relative;
+            top: 60px;
+        }
+
+        .prize .prize-main li p:last-child {
+            position: relative;
+            top: 70px;
+            font-size: 13px;
+        }
+
+        p {
+            /* text-align: center; */
+            /* padding: 24px; */
+            /* margin: 0; */
+            /* font-family: helvetica, arial, sans-serif; */
+            /* font-size: 80px; */
+            /* color: #eef1b8;
+            font-weight: bold;
+            text-shadow: 0 0 0.1em #eef1b8, -0 -0 0.1em #eef1b8; */
+        }
+    </style>
+
+    <script>
+        (function () {
+            if (window.location.protocol.substr(0, 4) === "file") {
+                alert("发布后的游戏需上传到服务器上才能运行，本地无法运行！！！");
+            }
+        })();
+    </script>
+
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+    <!--modules_files_start-->
+    <script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
+    <script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
+    <script egret="lib" src="libs/modules/game/game.js" src-release="libs/modules/game/game.min.js"></script>
+    <script egret="lib" src="libs/modules/game/game.web.js" src-release="libs/modules/game/game.web.min.js"></script>
+    <script egret="lib" src="libs/modules/tween/tween.js" src-release="libs/modules/tween/tween.min.js"></script>
+    <script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
+    <script egret="lib" src="libs/modules/ls/ls.js" src-release="libs/modules/ls/ls.min.js"></script>
+    <!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <script egret="lib" src="libs/qrcode.js" src-release="libs/qrcode.js"></script>
+    <!--other_libs_files_end-->
+    <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+    <!--game_files_start-->
+    <script egret="game" src="src/runtime/plugins/bitmaptext/runtime.js"></script>
+    <script egret="game" src="src/runtime/plugins/movieclip/runtime.js"></script>
+    <script egret="game" src="src/runtime/plugins/tiledbackground/runtime.js"></script>
+    <script egret="game" src="src/runtime/plugins/browser/runtime.js"></script>
+    <script egret="game" src="src/runtime/behaviors/platform/runtime.js"></script>
+    <script egret="game" src="src/runtime/behaviors/scrollTo/runtime.js"></script>
+    <script egret="game" src="src/runtime/behaviors/solid/runtime.js"></script>
+    <script egret="game" src="src/runtime/expressions.js"></script>
+    <script egret="game" src="src/Main.js"></script>
+    <!--game_files_end-->
+</head>
+
+<body>
+    <div id="qrcode" style="margin-left:auto;margin-right:2px;width:220px;"></div>
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main" data-orientation="landscape"
+        data-scale-mode="fixedHeight" data-frame-rate="60" data-content-width="1472" data-content-height="828" data-show-paint-rect="false"
+        data-multi-fingered="2" data-show-fps="false" data-show-log="false" data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
+    </div>
+    <div class="other" id="other">
+        <div class="rules" id="rules">
+            <img src="img.png" class="rules-image">
+            <div class="rules-dowm">dowm</div>
+            <div class="rules-back" onclick="rulesBack()">back</div>
+        </div>
+    </div>
+    <div class="prize" id="prize">
+        <div class="title"></div>
+        <div class="back" onclick="prizeBack()"></div>
+        <ul class="prize-main">
+            <li>
+                <div class="main">
+                    <div class="main-img"></div>
+                    <p>魔力雪肌气垫霜</p>
+                    <p>价值：239元</p>
+                    <div>【未领取】</div>
+                    <div class="button"></div>
+                </div>
+
+            </li>
+            <li>
+                <div class="main">
+                    <div class="main-img"></div>
+                    <p>魔力雪肌气垫霜</p>
+                    <p>价值：239元</p>
+                    <div>【未领取】</div>
+                    <div class="button"></div>
+                </div>
+            </li>
+            <li>
+                <div class="main">
+                    <div class="main-img"></div>
+                    <p>魔力雪肌气垫霜</p>
+                    <p>价值：239元</p>
+                    <div>【未领取】</div>
+                    <div class="button"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        if (egret.MainContext.deviceType == egret.MainContext.DEVICE_MOBILE) {
+            document.getElementById("qrcode").style.display = "none";
+        } else {
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                width: 120, //设置宽高
+                height: 120
+            });
+            qrcode.makeCode(window.location.href);
+        }
+        egret.runEgret({
+            renderMode: 'webgl'
+        });
+
+        function rulesClick() {
+            console.log("rulesClick()");
+            document.getElementById("other").style.display = "block";
+        }
+
+        function rulesBack() {
+            console.log("rulesBack()");
+            document.getElementById("other").style.display = "none";
+        }
+
+        function prizeBack() {
+            console.log("prizeBack()");
+            document.getElementById("prize").style.display = "none";
+        }
+
+
+        (function () {
+            function resize() {
+                var width = document.documentElement.clientWidth;
+                var height = document.documentElement.clientHeight;
+                var other = document.getElementById('other');
+                var max = width > height ? width : height;
+                var min = width > height ? height : width;
+                other.style.width = max + "px";
+                other.style.height = min + "px";
+            }
+            resize();
+            window.addEventListener("resize", resize)
+        })();
+        System.temp = Math.floor(System.time);
+        if(System.temp > 9) {
+            System.temp = "0" + System.temp;
+        }
+
+    </script>
+</body>
+
+</html>

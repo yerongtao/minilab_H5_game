@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>minilab</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="full-screen" content="true" />
+  <meta name="screen-orientation" content="portrait" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="360-fullscreen" content="true" />
+  <style>
+    html,
+    body {
+      -ms-touch-action: none;
+      background: #000000;
+      padding: 0;
+      border: 0;
+      margin: 0;
+      height: 100%;
+    }
+
+  </style>
+
+  <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+  <!--modules_files_start-->
+  <script egret="lib" src="libs/modules/egret/egret.min.js" src-release="libs/modules/egret/egret.min.js"></script>
+  <script egret="lib" src="libs/modules/egret/egret.web.min.js" src-release="libs/modules/egret/egret.web.min.js"></script>
+  <script egret="lib" src="libs/modules/game/game.min.js" src-release="libs/modules/game/game.min.js"></script>
+  <script egret="lib" src="libs/modules/game/game.web.min.js" src-release="libs/modules/game/game.web.min.js"></script>
+  <script egret="lib" src="libs/modules/tween/tween.min.js" src-release="libs/modules/tween/tween.min.js"></script>
+  <script egret="lib" src="libs/modules/res/res.min.js" src-release="libs/modules/res/res.min.js"></script>
+  <script egret="lib" src="libs/modules/ls/ls.min.js" src-release="libs/modules/ls/ls.min.js"></script>
+  <!--modules_files_end-->
+
+  <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+  <!--other_libs_files_start-->
+  <!--other_libs_files_end-->
+  <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+  <!--game_files_start-->
+  <script egret="game" src="src/runtime/plugins/audio/runtime.js"></script>
+  <script egret="game" src="src/runtime/plugins/bitmaptext/runtime.js"></script>
+  <script egret="game" src="src/runtime/plugins/tiledbackground/runtime.js"></script>
+  <script egret="game" src="src/runtime/plugins/browser/runtime.js"></script>
+  <script egret="game" src="src/runtime/plugins/movieclip/runtime.js"></script>
+  <script egret="game" src="src/runtime/behaviors/bullet/runtime.js"></script>
+  <script egret="game" src="src/runtime/behaviors/destroy/runtime.js"></script>
+  <script egret="game" src="src/runtime/behaviors/solid/runtime.js"></script>
+  <script egret="game" src="src/runtime/behaviors/scroll/runtime.js"></script>
+  <script egret="game" src="src/runtime/behaviors/platform/runtime.js"></script>
+  <script egret="game" src="src/runtime/expressions.js"></script>
+  <script egret="game" src="src/Main.js"></script>
+  <!--game_files_end-->
+
+  <!-- 引入 loading.css -->
+  <script src="src/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" href="src/loading.css">
+</head>
+
+<body>
+  <!-- loading 动画 -->
+  <div class="loading" id="loading">
+    <div class="loading-img">
+      <img src="./resource/assets/loading_life_1.png" alt="" class="life1">
+      <img src="./resource/assets/loading_life_2.png" alt="" class="life2" id="life2">
+    </div>
+    <div class="progress" id="progress">LOADING 0 %</div>
+  </div>
+  <div class="rotate" id="rotate"></div>
+
+  <!-- 游戏场景 egret-player -->
+  <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main" data-orientation="landscape"
+    data-scale-mode="fixedHeight" data-frame-rate="60" data-content-width="1656" data-content-height="828" data-show-paint-rect="false"
+    data-multi-fingered="2" data-show-fps="false" data-show-log="false" data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
+  </div>
+  <!-- resize 监听 loading 设置强制横屏 -->
+  <script>
+    (function () {
+      function resize() {
+        var Width = document.getElementsByTagName('body')[0].clientWidth;
+        var Height = document.getElementsByTagName('body')[0].clientHeight;
+        var L = document.getElementById("loading")
+        var R = document.getElementById("rotate")
+        var max = Width > Height ? Width : Height;
+        var min = Width > Height ? Height : Width;
+        // console.log(Width, Height)
+        L.style.width = max + "px";
+        L.style.height = min + "px";
+        R.style.width = min + "px";
+        R.style.height = max + "px";
+      }
+      resize();
+      window.addEventListener("resize", resize)
+    })();
+
+  </script>
+  <!-- 游戏部分 渲染以及函数调用 -->
+  <script>
+    egret.runEgret({
+      renderMode: 'webgl'
+    });
+
+    // 获取路径上的 token
+    function parseUrl() {
+      // 由于使用了 window.history ，获取 token 的方法需要换一下
+      var search = location.search
+      // console.log("search = " + search);
+      if (!search) {
+        // console.log("不存在 search 的情况下 " + search);
+        System.music = 1
+        return
+      } else {
+        var i = search.indexOf('?');
+        var querystr = search.substr(i + 1);
+        var arr1 = querystr.split('&');
+        var arr2 = new Object();
+        for (i in arr1) {
+          var ta = arr1[i].split('=');
+          arr2[ta[0]] = ta[1];
+        }
+        return arr2;
+      }
+    }
+
+
+    function getUrlMusic() {
+      // console.log(parseUrl())
+      if (parseUrl().music || parseUrl().token) {
+        // console.log(parseUrl())
+        System.music = parseUrl().music
+        System.token = parseUrl().token
+        // console.log('System.token = ' + System.token)
+      }
+    }
+
+    function backToHome() {
+      window.location.href = '../?music=' + System.music + '&token=' + System.token
+    }
+
+    function luckClick() {
+      window.location.href = '../?page=draw&music=' + System.music + '&token=' + System.token
+    }
+
+  </script>
+
+  <!-- 微信分享 - 支付宝分享 -->
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.inc.min.js"></script>
+  <script src="src/share.js"></script>
+  <script>
+    $(function () {　
+      // console.log("这里打印试一下")　
+      if (window.history && window.history.pushState) {　　
+        $(window).on('popstate', function () {　　
+          window.history.pushState('forward', null, '#');　　
+          window.history.forward(1);　　
+        });　　
+      }　　
+      window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
+      window.history.forward(1);　　
+    })
+
+  </script>
+</body>
+
+</html>

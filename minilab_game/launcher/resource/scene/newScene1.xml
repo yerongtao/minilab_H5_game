@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout id="null" sceneSize="1472,828" next="FirstScene" previous="MainScene" eventSheet="newScene1EventSheet" version="2.2">
+  <layer index="0" parallaxX="100" parallaxY="100" layerAlpha="1" layerVisible="true" cacheAsBitmap="false" bgColor="" bgColorAlpha="" layerScaleX="100" layerScaleY="100"/>
+  <layer index="1" parallaxX="100" parallaxY="100" layerAlpha="1" layerVisible="true" cacheAsBitmap="false" bgColor="" bgColorAlpha="" layerScaleX="100" layerScaleY="100"/>
+  <item UID="5460" plugin="AITiledBackground" name="bg3" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="0" family="displayobject">
+    <item name="name" value="bg3" valueDataType="string"/>
+    <item name="uiGuid" value="5460" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="934.0887775310034" valueDataType="number"/>
+    <item name="y" value="414" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="1868.1775550620068" valueDataType="number"/>
+    <item name="height" value="828" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="url" value="resource%2FuserAsset%2FgameOver%2Fjs.png" valueDataType="string"/>
+    <item name="enabled" value="false" valueDataType="boolean"/>
+    <item name="collision" value="true" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C828.00%2C1868.18%7C828.00%2C1868.18%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C828.00%2C1868.18%7C828.00%2C1868.18%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="0" valueDataType="number"/>
+  </item>
+  <item UID="5356" plugin="AISprite" name="cat" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="0" family="displayobject">
+    <item name="name" value="cat" valueDataType="string"/>
+    <item name="uiGuid" value="5356" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="400" valueDataType="number"/>
+    <item name="y" value="540" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="254" valueDataType="number"/>
+    <item name="height" value="423" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="url" value="resource%2FuserAsset%2FgameOver%2Fjs_cat.png" valueDataType="string"/>
+    <item name="enabled" value="false" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C423.00%2C254.00%7C423.00%2C254.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C423.00%2C254.00%7C423.00%2C254.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+  <item UID="5359" plugin="AISprite" name="light" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="1" family="displayobject">
+    <item name="name" value="light" valueDataType="string"/>
+    <item name="uiGuid" value="5359" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="914.323456512178" valueDataType="number"/>
+    <item name="y" value="414" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="1175" valueDataType="number"/>
+    <item name="height" value="828" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="url" value="resource%2FuserAsset%2FgameOver%2Fjs_light.png" valueDataType="string"/>
+    <item name="enabled" value="false" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C828.00%2C1175.00%7C828.00%2C1175.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C828.00%2C1175.00%7C828.00%2C1175.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+  <item UID="5362" plugin="AISprite" name="failbtn" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="2" family="displayobject">
+    <item name="name" value="failbtn" valueDataType="string"/>
+    <item name="uiGuid" value="5362" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="831.6448294596873" valueDataType="number"/>
+    <item name="y" value="-309.07087400487103" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="336" valueDataType="number"/>
+    <item name="height" value="95" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="url" value="resource%2FuserAsset%2FgameOver%2Fjs_failbtn.png" valueDataType="string"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C95.00%2C336.00%7C95.00%2C336.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C95.00%2C336.00%7C95.00%2C336.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+  <item UID="5365" plugin="AISprite" name="winbtn" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="3" family="displayobject">
+    <item name="name" value="winbtn" valueDataType="string"/>
+    <item name="uiGuid" value="5365" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="838.7243061499025" valueDataType="number"/>
+    <item name="y" value="-143.44699388406875" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="336" valueDataType="number"/>
+    <item name="height" value="95" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="url" value="resource%2FuserAsset%2FgameOver%2Fjs_winbtn.png" valueDataType="string"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C95.00%2C336.00%7C95.00%2C336.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C95.00%2C336.00%7C95.00%2C336.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+  <item UID="5368" plugin="AISprite" name="win" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="4" family="displayobject">
+    <item name="name" value="win" valueDataType="string"/>
+    <item name="uiGuid" value="5368" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="289.7036456527478" valueDataType="number"/>
+    <item name="y" value="-167.60644694397854" valueDataType="number"/>
+    <item name="anchorX" value="0" valueDataType="number"/>
+    <item name="anchorY" value="0" valueDataType="number"/>
+    <item name="width" value="255" valueDataType="number"/>
+    <item name="height" value="71" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="url" value="resource%2FuserAsset%2FgameOver%2Fjs_win.png" valueDataType="string"/>
+    <item name="enabled" value="false" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C71.00%2C255.00%7C71.00%2C255.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C71.00%2C255.00%7C71.00%2C255.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+  <item UID="5371" plugin="AISprite" name="fail" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="5" family="displayobject">
+    <item name="name" value="fail" valueDataType="string"/>
+    <item name="uiGuid" value="5371" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="284.0192214660035" valueDataType="number"/>
+    <item name="y" value="-327.2252688853358" valueDataType="number"/>
+    <item name="anchorX" value="0" valueDataType="number"/>
+    <item name="anchorY" value="0" valueDataType="number"/>
+    <item name="width" value="309" valueDataType="number"/>
+    <item name="height" value="70" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="url" value="resource%2FuserAsset%2FgameOver%2Fjs_fail.png" valueDataType="string"/>
+    <item name="enabled" value="false" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="boolean"/>
+    <item name="collisionData" value="0%2Fn0.00%7C70.00%2C309.00%7C70.00%2C309.00%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C70.00%2C309.00%7C70.00%2C309.00%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+  <item UID="5466" plugin="AIBitmapText" name="defen" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="6" family="text">
+    <item name="name" value="defen" valueDataType="string"/>
+    <item name="uiGuid" value="5466" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="935.2998606539757" valueDataType="number"/>
+    <item name="y" value="355" valueDataType="number"/>
+    <item name="anchorX" value="0.5" valueDataType="number"/>
+    <item name="anchorY" value="0.5" valueDataType="number"/>
+    <item name="width" value="315.6652631370397" valueDataType="number"/>
+    <item name="height" value="136.65982523273306" valueDataType="number"/>
+    <item name="angle" value="0" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="bmpUrl" value="resource%2FuserAsset%2Fdefen%2Fdefen_2.png" valueDataType="string"/>
+    <item name="fntUrl" value="resource%2FuserAsset%2Fdefen%2Fdefen_2.fnt" valueDataType="string"/>
+    <item name="text" value="5840" valueDataType="string"/>
+    <item name="letterSpacing" value="0" valueDataType="number"/>
+    <item name="lineSpacing" value="0" valueDataType="number"/>
+    <item name="enabled" value="true" valueDataType="boolean"/>
+    <item name="collision" value="false" valueDataType="number"/>
+    <item name="collisionData" value="0%2Fn0.00%7C136.66%2C315.67%7C136.66%2C315.67%7C0.00%2C0.00%7C0.00" sourceValue="0%2Fn0.00%7C136.66%2C315.67%7C136.66%2C315.67%7C0.00%2C0.00%7C0.00" valueDataType="string"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+  <item UID="5981" plugin="AIAudio" name="sound" cacheAsBitmap="false" parallaxX="100" parallaxY="100" index="7" family="">
+    <item name="name" value="sound" valueDataType="string"/>
+    <item name="uiGuid" value="5981" valueDataType="string"/>
+    <item name="global" value="false" valueDataType="boolean"/>
+    <item name="visible" value="true" valueDataType="boolean"/>
+    <item name="x" value="1096.7" valueDataType="number"/>
+    <item name="y" value="-294.6" valueDataType="number"/>
+    <item name="width" value="100" valueDataType="number"/>
+    <item name="height" value="100" valueDataType="number"/>
+    <item name="alpha" value="1" valueDataType="number"/>
+    <item name="url" value="resource%2FuserAsset%2Fsound%2Fsound1.mp3" valueDataType="string"/>
+    <item name="loop" value="0" valueDataType="number"/>
+    <item name="volume" value="1" valueDataType="number"/>
+    <item name="playOnStart" value="true" valueDataType="boolean"/>
+    <item name="layer" value="1" valueDataType="number"/>
+  </item>
+</layout>

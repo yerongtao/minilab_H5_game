@@ -1,0 +1,55 @@
+{
+  "code": 0,
+  "msg": "模拟活动规则数据",
+  "count": 3,
+  "data": {
+    "date": {
+      "year": 2018,
+      "month": 9,
+      "day": 30
+    },
+    "score": 1000,
+    "prizeList": [{
+        "id": 1,
+        "peizeType": "一等奖",
+        "prizeName": "minilab 高清无瑕美肌气垫",
+        "prizeNum": 20
+      },
+      {
+        "id": 2,
+        "peizeType": "二等奖",
+        "prizeName": "minilab 魔力雪肌气垫霜",
+        "prizeNum": 100
+
+      },
+      {
+        "id": 3,
+        "peizeType": "三等奖",
+        "prizeName": "minilab 轻柔持妆BB霜",
+        "prizeNum": 500
+
+      },
+      {
+        "id": 4,
+        "peizeType": "四等奖",
+        "prizeName": "minilab 新肌修颜隔离霜",
+        "prizeNum": 500
+
+      },
+      {
+        "id": 5,
+        "peizeType": "五等奖",
+        "prizeName": "minilab 柔感亲肤蜜粉",
+        "prizeNum": 500
+
+      },
+      {
+        "id": 6,
+        "peizeType": "六等奖",
+        "prizeName": "隔离霜小样",
+        "prizeNum": 500
+
+      }
+    ]
+  }
+}
